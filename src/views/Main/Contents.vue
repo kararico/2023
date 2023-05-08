@@ -12,22 +12,22 @@
             </div>
             <div class="form_content">
                 <h4>I'M READY</h4>
-                <!-- <form action="post"> -->
+                <form @submit.prevent="handleSubmit">
                     <ul class="form_list">
                         <li>
-                            <input type="text">
+                            <input type="text" v-model="userForm.company" id="usercompany" name="company">
                             <label for="company">COMPANY</label>
                         </li>
                         <li>
-                            <input type="text">
+                            <input type="text" v-model="userForm.name" id="username" name="name">
                             <label for="name">NAME</label>
                         </li>
                         <li>
-                            <input type="text">
+                            <input type="text" v-model="userForm.email" id="useremail" name="email">
                             <label for="email">EMAIL</label>
                         </li>
                         <li>
-                            <input type="text">
+                            <input type="text" v-model="userForm.phone" id="userephone" name="phone">
                             <label for="phone">PHONE</label>
                         </li>
                         <li>
@@ -65,7 +65,7 @@
                             <button type="button">프로젝트 문의하기</button>
                         </li>
                     </ul>
-                <!-- </form> -->
+                </form>
             </div>
         </div>
     </section>
