@@ -30,18 +30,21 @@ const collectionRef = db.collection('collectionName');
 // const auth = firebase.auth();
 
 export { db };
-
 import 'reset-css';
-
 import mitt from 'mitt';
+//vue form 
+import * as  Vuelidate from '@vuelidate/validators';
 
 const emitter = mitt();
 const app = createApp(App)
+
+
 
 app.use(router)
 app.use(store)
 app.use(gsapScrollTrigger)
 app.use(ScrollPlugin)
+app.use(Vuelidate);
 app.config.globalProperties.emitter = emitter
 
 app.mount('#app')

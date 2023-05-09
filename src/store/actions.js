@@ -17,6 +17,7 @@ export default {
         console.log(error);
       });
   },
+
   /* Distructuring 이용 - 인자값의 속성을 바로 사용 */
   FETCH_JOBS({ commit }) {
     fetchJobsList()
@@ -27,15 +28,19 @@ export default {
         console.log(error);
       });
   },
+
   FETCH_ASK(context) {
     fetchAskList()
       .then(response => {
         context.commit("SET_ASK", response.data);
+
+        console.log( "init?", response )
       })
       .catch(error => {
         console.log(error);
       });
   },
+
   FETCH_USER({ commit }, name) {
     fetchUserInfo(name)
       .then(({ data }) => {
@@ -45,6 +50,7 @@ export default {
         console.log(error);
       });
   },
+
   FETCH_ITEM({ commit }, itemId) {
     fetchCommentItem(itemId)
       .then(({ data }) => {
@@ -54,4 +60,5 @@ export default {
         console.log(error);
       });
   },
+  
 };

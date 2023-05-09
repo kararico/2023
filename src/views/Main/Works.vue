@@ -57,6 +57,8 @@ export default {
         const response = await axios.get(downloadUrl);
         const data = await response.data;
         this.project.push( data );
+
+        this.$store.dispatch("FETCH_ASK");
     },
     mounted() {
         this.$nextTick(() => {
@@ -154,8 +156,6 @@ export default {
 
         const timeline1 = new TimelineMax();
            timeline1.fromTo(this.$refs.titles, { opacity: 0, x:-window.innerWidth /2 }, {opacity: 1, x: 0, css:{className:'active'} })
-
-
            this.$scrollTrigger.create({
                trigger: this.$refs.trigger,
                animation: timeline1,
